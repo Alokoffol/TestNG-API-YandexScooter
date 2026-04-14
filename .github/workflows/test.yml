@@ -22,13 +22,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: Cache Maven dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
-
       - name: Run tests
         run: mvn clean test
 
@@ -46,14 +39,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Download all artifacts
+      - name: Download Allure results
         uses: actions/download-artifact@v4
         with:
+          name: allure-results
           path: allure-results
-          merge-multiple: true
 
       - name: Install Allure
         run: |
@@ -62,16 +52,15 @@ jobs:
           wget https://github.com/allure-framework/allure2/releases/download/2.24.0/allure_2.24.0-1_all.deb
           sudo dpkg -i allure_2.24.0-1_all.deb
           sudo apt-get install -f
-          allure --version
 
       - name: Generate Allure Report
         run: |
           allure generate --clean -o allure-report allure-results
 
-      - name: Deploy report to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-report
-          keep_files: true
+          keep_files: false
