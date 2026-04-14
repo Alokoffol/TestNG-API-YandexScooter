@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Яндекс.Самокат API Tests" parallel="methods" thread-count="3">
+
+    <listeners>
+        <listener class-name="e2e.listeners.AllureListener"/>
+        <listener class-name="e2e.listeners.TestLoggerListener"/>
+    </listeners>
+
+    <test name="Courier Tests">
+        <classes>
+            <class name="e2e.tests.api.CreateCourierTest"/>
+            <class name="e2e.tests.api.LoginCourierTest"/>
+        </classes>
+    </test>
+
+    <test name="Order Tests">
+        <classes>
+            <class name="e2e.tests.api.CreateOrderTest"/>
+            <class name="e2e.tests.api.GetOrdersTest"/>
+        </classes>
+    </test>
+
+</suite>
