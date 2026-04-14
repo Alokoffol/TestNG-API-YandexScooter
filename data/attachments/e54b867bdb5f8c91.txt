@@ -1,0 +1,11 @@
+{
+  "firstName": "Иван",
+  "lastName": "Сидоров",
+  "address": "Автозаводский 3-й проезд",
+  "metroStation": "13",
+  "phone": "+7 904 4504759",
+  "rentTime": 3,
+  "deliveryDate": "2026-04-21",
+  "comment": "Срочно!",
+  "color": []
+}

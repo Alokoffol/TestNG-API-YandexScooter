@@ -1,0 +1,13 @@
+{
+  "firstName": "Сергей",
+  "lastName": "Смирнов",
+  "address": "Дмитрия Разумовского улица",
+  "metroStation": "4",
+  "phone": "+7 902 6536018",
+  "rentTime": 3,
+  "deliveryDate": "2026-05-04",
+  "comment": "Позвонить за 5 минут",
+  "color": [
+    "GREY"
+  ]
+}

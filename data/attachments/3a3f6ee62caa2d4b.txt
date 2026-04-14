@@ -1,0 +1,13 @@
+{
+  "firstName": "Пётр",
+  "lastName": "Кузнецов",
+  "address": "Арбат",
+  "metroStation": "8",
+  "phone": "+7 904 4288583",
+  "rentTime": 1,
+  "deliveryDate": "2026-05-04",
+  "comment": "Домофон не работает",
+  "color": [
+    "BLACK"
+  ]
+}

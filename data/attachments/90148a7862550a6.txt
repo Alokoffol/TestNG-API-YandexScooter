@@ -1,0 +1,10 @@
+{
+  "firstName": "Дмитрий",
+  "lastName": "Иванов",
+  "address": "Внуковское шоссе",
+  "metroStation": "7",
+  "phone": "+7 900 6809782",
+  "rentTime": 4,
+  "deliveryDate": "2026-04-27",
+  "comment": "Без комментариев"
+}
