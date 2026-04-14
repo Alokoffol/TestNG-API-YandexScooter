@@ -5,7 +5,7 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-  workflow_dispatch:  # ручной запуск
+  workflow_dispatch:
 
 jobs:
   test:
@@ -39,4 +39,4 @@ jobs:
         with:
           name: allure-report
           path: target/site/allure-maven-plugin/
-          retention-days: 7
+          retention-days: 30
