@@ -1,0 +1,13 @@
+{
+  "firstName": "Сергей",
+  "lastName": "Сидоров",
+  "address": "Кутузовский проспект",
+  "metroStation": "7",
+  "phone": "+7 906 5320454",
+  "rentTime": 5,
+  "deliveryDate": "2026-04-24",
+  "comment": "Оставить у двери",
+  "color": [
+    "GREY"
+  ]
+}

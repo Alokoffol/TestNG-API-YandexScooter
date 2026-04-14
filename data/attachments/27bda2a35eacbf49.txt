@@ -1,0 +1,14 @@
+{
+  "firstName": "Иван",
+  "lastName": "Иванов",
+  "address": "Абрамцевская улица",
+  "metroStation": "4",
+  "phone": "+7 909 3323467",
+  "rentTime": 3,
+  "deliveryDate": "2026-05-08",
+  "comment": "Домофон не работает",
+  "color": [
+    "BLACK",
+    "GREY"
+  ]
+}
