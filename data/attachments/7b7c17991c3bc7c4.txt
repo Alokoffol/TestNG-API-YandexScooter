@@ -1,0 +1,14 @@
+{
+  "firstName": "Анна",
+  "lastName": "Иванов",
+  "address": "Тверская улица",
+  "metroStation": "8",
+  "phone": "+7 903 2381396",
+  "rentTime": 3,
+  "deliveryDate": "2026-05-03",
+  "comment": "Позвонить за 5 минут",
+  "color": [
+    "BLACK",
+    "GREY"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "firstName": "Алексей",
+  "lastName": "Сидоров",
+  "address": "Абрамцевская улица",
+  "metroStation": "10",
+  "phone": "+7 900 5248795",
+  "rentTime": 4,
+  "deliveryDate": "2026-04-24",
+  "comment": "Домофон не работает",
+  "color": [
+    "GREY"
+  ]
+}

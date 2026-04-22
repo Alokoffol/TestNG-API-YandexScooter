@@ -1,0 +1,11 @@
+{
+  "firstName": "Дмитрий",
+  "lastName": "Петров",
+  "address": "Кутузовский проспект",
+  "metroStation": "6",
+  "phone": "+7 903 3018732",
+  "rentTime": 1,
+  "deliveryDate": "2026-05-10",
+  "comment": "Осторожно, собака",
+  "color": []
+}

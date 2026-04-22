@@ -1,0 +1,10 @@
+{
+  "firstName": "Мария",
+  "lastName": "Сидоров",
+  "address": "Автозаводский 3-й проезд",
+  "metroStation": "11",
+  "phone": "+7 901 4285758",
+  "rentTime": 4,
+  "deliveryDate": "2026-04-28",
+  "comment": "Осторожно, собака"
+}

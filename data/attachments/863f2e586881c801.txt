@@ -1,0 +1,13 @@
+{
+  "firstName": "Иван",
+  "lastName": "Смирнов",
+  "address": "Абрамцевская улица",
+  "metroStation": "6",
+  "phone": "+7 905 3947035",
+  "rentTime": 5,
+  "deliveryDate": "2026-05-02",
+  "comment": "Оставить у двери",
+  "color": [
+    "BLACK"
+  ]
+}
