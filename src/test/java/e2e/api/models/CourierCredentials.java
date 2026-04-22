@@ -11,7 +11,6 @@ public class CourierCredentials {
         this.firstName = firstName;
     }
 
-    // Геттеры
     public String getLogin() {
         return login;
     }
@@ -24,7 +23,6 @@ public class CourierCredentials {
         return firstName;
     }
 
-    // Сеттеры
     public void setLogin(String login) {
         this.login = login;
     }
@@ -37,7 +35,6 @@ public class CourierCredentials {
         this.firstName = firstName;
     }
 
-    // Фабричный метод для логина (без firstName)
     public static CourierCredentials fromLogin(String login, String password) {
         return new CourierCredentials(login, password, null);
     }

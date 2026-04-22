@@ -11,20 +11,13 @@ public class TestDataGenerator {
 
     private static final Random RANDOM = new Random();
 
-    // Данные для курьера
     public static CourierCredentials generateRandomCourier() {
         String login = "courier_" + System.currentTimeMillis() + "_" + RANDOM.nextInt(10000);
         String password = "pass_" + RANDOM.nextInt(10000);
-        String firstName = generateRandomFirstName();
+        String firstName = FIRST_NAMES[RANDOM.nextInt(FIRST_NAMES.length)];
         return new CourierCredentials(login, password, firstName);
     }
 
-    private static String generateRandomFirstName() {
-        String[] names = {"Иван", "Пётр", "Алексей", "Дмитрий", "Сергей", "Анна", "Мария", "Елена"};
-        return names[RANDOM.nextInt(names.length)];
-    }
-
-    // Данные для заказа
 
     private static final String[] FIRST_NAMES = {"Иван", "Пётр", "Алексей", "Дмитрий", "Сергей", "Анна", "Мария", "Елена"};
     private static final String[] LAST_NAMES = {"Иванов", "Петров", "Сидоров", "Смирнов", "Кузнецов"};
@@ -44,25 +37,21 @@ public class TestDataGenerator {
             "Осторожно, собака", "Без комментариев", "Срочно!"
     };
 
-    // Генерирует случайный номер телефона
     private static String generateRandomPhone() {
         String prefix = PHONE_PREFIXES[RANDOM.nextInt(PHONE_PREFIXES.length)];
         int number = 1000000 + RANDOM.nextInt(9000000);
         return prefix + " " + number;
     }
 
-    // Генерирует случайную дату доставки (сегодня + от 1 до 30 дней)
     private static String generateRandomDeliveryDate() {
         LocalDate date = LocalDate.now().plusDays(ThreadLocalRandom.current().nextInt(1, 31));
         return date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 
-    // Генерирует случайное количество дней аренды (1-7 дней)
     private static int generateRandomRentTime() {
         return 1 + RANDOM.nextInt(7);  // от 1 до 7
     }
 
-    // Генерирует полностью случайный заказ
     public static Order generateRandomOrder() {
         String firstName = FIRST_NAMES[RANDOM.nextInt(FIRST_NAMES.length)];
         String lastName = LAST_NAMES[RANDOM.nextInt(LAST_NAMES.length)];
@@ -75,6 +64,5 @@ public class TestDataGenerator {
 
         return new Order(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment);
     }
-
 
 }

@@ -10,13 +10,11 @@ import static io.restassured.RestAssured.given;
 
 public class CourierClient {
 
-    // Конфиг для долгих операций
     private static final RestAssuredConfig LONG_TIMEOUT_CONFIG = RestAssuredConfig.config()
             .httpClient(HttpClientConfig.httpClientConfig()
                     .setParam("http.connection.timeout", 30000)
                     .setParam("http.socket.timeout", 30000));
 
-    // Конфиг для обычных операций
     private static final RestAssuredConfig DEFAULT_CONFIG = RestAssuredConfig.config()
             .httpClient(HttpClientConfig.httpClientConfig()
                     .setParam("http.connection.timeout", 10000)

@@ -12,13 +12,11 @@ public class Order {
     private final String comment;
     private String[] color;
 
-    // Конструктор без цвета
     public Order(String firstName, String lastName, String address, String metroStation,
                  String phone, Integer rentTime, String deliveryDate, String comment) {
         this(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment, null);
     }
 
-    // Конструктор с цветом
     public Order(String firstName, String lastName, String address, String metroStation,
                  String phone, Integer rentTime, String deliveryDate, String comment, String[] color) {
         this.firstName = firstName;
@@ -32,7 +30,6 @@ public class Order {
         this.color = color;
     }
 
-    // Геттеры
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public String getAddress() { return address; }

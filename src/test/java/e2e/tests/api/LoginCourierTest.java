@@ -19,20 +19,16 @@ public class LoginCourierTest extends BaseApiTest {
     @Story("Логин курьера")
     @Severity(SeverityLevel.CRITICAL)
     public void courierCanLogin() {
-        // Создаём уникального курьера прямо в тесте
         CourierCredentials testCourier = TestDataGenerator.generateRandomCourier();
 
-        // Создаём курьера
         courierSteps.create(testCourier).statusCode(201);
 
-        // Логинимся
         int courierId = courierSteps.login(
                         CourierCredentials.fromLogin(testCourier.getLogin(), testCourier.getPassword()))
                 .statusCode(200)
                 .body("id", notNullValue())
                 .extract().path("id");
 
-        // Удаляем курьера
         courierSteps.delete(courierId);
     }
 
@@ -40,21 +36,17 @@ public class LoginCourierTest extends BaseApiTest {
     @Story("Логин курьера")
     @Severity(SeverityLevel.NORMAL)
     public void loginWithWrongLoginReturnsError() {
-        // Создаём реального курьера для проверки
         CourierCredentials testCourier = TestDataGenerator.generateRandomCourier();
         courierSteps.create(testCourier).statusCode(201);
 
-        // Получаем ID для удаления
         int courierId = courierSteps.login(
                         CourierCredentials.fromLogin(testCourier.getLogin(), testCourier.getPassword()))
                 .extract().path("id");
 
-        // Пробуем логин с неверным логином
         courierSteps.login(CourierCredentials.fromLogin("nonexistent_" + System.currentTimeMillis(), testCourier.getPassword()))
                 .statusCode(404)
                 .body("message", equalTo("Учетная запись не найдена"));
 
-        // Удаляем курьера
         courierSteps.delete(courierId);
     }
 
@@ -62,21 +54,17 @@ public class LoginCourierTest extends BaseApiTest {
     @Story("Логин курьера")
     @Severity(SeverityLevel.NORMAL)
     public void loginWithWrongPasswordReturnsError() {
-        // Создаём реального курьера для проверки
         CourierCredentials testCourier = TestDataGenerator.generateRandomCourier();
         courierSteps.create(testCourier).statusCode(201);
 
-        // Получаем ID для удаления
         int courierId = courierSteps.login(
                         CourierCredentials.fromLogin(testCourier.getLogin(), testCourier.getPassword()))
                 .extract().path("id");
 
-        // Пробуем логин с неверным паролем
         courierSteps.login(CourierCredentials.fromLogin(testCourier.getLogin(), "wrong_password_" + System.currentTimeMillis()))
                 .statusCode(404)
                 .body("message", equalTo("Учетная запись не найдена"));
 
-        // Удаляем курьера
         courierSteps.delete(courierId);
     }
 }

@@ -27,20 +27,17 @@ public class CreateCourierTest extends BaseApiTest {
                 .statusCode(201)
                 .body("ok", equalTo(true));
 
-        // Добавляем в отчёт данные курьера
         AllureAttachmentsUtil.attachText("Создаваемый курьер",
                 "Логин: " + courier.getLogin() + "\n" +
                         "Пароль: " + courier.getPassword() + "\n" +
                         "Имя: " + courier.getFirstName());
 
-        // Логинимся, чтобы проверить, что курьер создан
         ValidatableResponse loginResponse = courierSteps.login(
                 CourierCredentials.fromLogin(courier.getLogin(), courier.getPassword()));
 
         int courierId = loginResponse.extract().path("id");
         Allure.addAttachment("Created", "Курьер ID: " + courierId);
 
-        // Очистка после теста
         courierSteps.delete(courierId);
     }
 
@@ -51,20 +48,16 @@ public class CreateCourierTest extends BaseApiTest {
 
         CourierCredentials courier = TestDataGenerator.generateRandomCourier();
 
-        // Первое создание
         courierSteps.create(courier).statusCode(201);
 
-        // Получаем ID для удаления
         ValidatableResponse loginResponse = courierSteps.login(
                 CourierCredentials.fromLogin(courier.getLogin(), courier.getPassword()));
         int courierId = loginResponse.extract().path("id");
 
-        // Второе создание (дубликат) — должна быть ошибка
         courierSteps.create(courier)
                 .statusCode(409)
                 .body("message", containsString("Этот логин уже используется"));
 
-        // Очистка после теста
         courierSteps.delete(courierId);
     }
 

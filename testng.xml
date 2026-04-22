@@ -3,7 +3,6 @@
 
     <listeners>
         <listener class-name="e2e.listeners.AllureListener"/>
-        <listener class-name="e2e.listeners.TestLoggerListener"/>
     </listeners>
 
     <test name="Courier Tests">
